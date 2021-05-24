@@ -145,7 +145,7 @@ export async function checkRakuten() {
 
 export function checkWebsites() {
   checkSony();
-  checkYodobashi();
+  // checkYodobashi();
   checkBicCamera();
   checkAmazon();
   checkRakuten();
