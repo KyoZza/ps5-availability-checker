@@ -1,5 +1,11 @@
-import { JSDOM } from 'jsdom';
+import jsdom, { JSDOM } from 'jsdom';
 import { sendMail, messages } from '../mailer/index.js';
+
+const options = {
+  resources: new jsdom.ResourceLoader({
+    userAgent: 'Mozilla/5.0',
+  }),
+};
 
 function logSuccessfulCheck(url) {
   console.log(`Checked {${url}}: ${new Date().toLocaleTimeString()}`);
@@ -15,7 +21,7 @@ function logFailedCheck(url, error) {
 }
 
 async function getDomFromURL(url) {
-  return JSDOM.fromURL(url);
+  return JSDOM.fromURL(url, options);
 }
 
 export async function checkSony() {
