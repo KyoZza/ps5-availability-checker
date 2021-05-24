@@ -6,5 +6,9 @@ cron.schedule('0 0 */1 * * *', () => {
   checkWebsites();
 });
 
+cron.schedule('0 6 * * friday', () => {
+  sendMail('Weekly mail');
+});
+
 sendMail('Heroku Project online');
 checkWebsites();
