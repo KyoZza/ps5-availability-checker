@@ -21,7 +21,7 @@ function logFailedCheck(url, error) {
 }
 
 async function getDomFromURL(url) {
-  return JSDOM.fromURL(url, options);
+  return JSDOM.fromURL(url);
 }
 
 export async function checkSony() {
