@@ -20,8 +20,8 @@ cron.schedule('0 6 * * friday', () => {
   sendMail('Weekly mail');
 });
 
-cron.schedule('0 */20 * * * *', () => {
-  // ping website every 25 minutes to prevent it from going into idling mode
+cron.schedule('0 */15 * * * *', () => {
+  // ping website every 15 minutes to prevent it from going into idling mode
   fetch('https://ps5-lottery-checker.herokuapp.com/').catch((err) =>
     console.log(err)
   );
